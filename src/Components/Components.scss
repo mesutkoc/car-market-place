@@ -1,0 +1,39 @@
+.header {
+    background-color: #2A59FE;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 70px;
+
+    .headerComp {
+        display: flex;
+        align-items: center;
+
+        .headerLogo {
+            font-size: 24px;
+            color: #FFFFFF;
+            font-weight: 800;
+
+        }
+
+        .searchInput {
+            width: 408px;
+            height: 36px;
+            font-size: 17px;
+            margin-left: 100px;
+        }
+    }
+
+    .basket {
+        color: #FFFFFF;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.dashboard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
