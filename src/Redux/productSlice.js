@@ -8,8 +8,6 @@ export const fetchProducts = createAsyncThunk('products/fetchProducts', () => {
     return axios.get(`${PROJECT_CONSTANTS.productAPI}`).then((response) => response.data);
 })
 
-
-
 const initialState = {
     loading: false,
     products: [],

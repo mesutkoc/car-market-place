@@ -9,18 +9,20 @@ export const fetchFilters = createAsyncThunk('filter/fetchFilters', () => {
 })
 
 
-
 const initialState = {
     loading: false,
     brandFilters: [],
-    modelFilters: []
+    modelFilters: [],
+    selectedFilters: {}
 };
 
 export const filterSlice = createSlice({
     name: 'filter',
     initialState,
     reducers: {
-
+        setFilters: (state, action) => {
+            state.selectedFilters = action.payload;
+        }
     },
     extraReducers: (builder) => {
         builder.addCase(fetchFilters.pending, (state) => {
@@ -35,6 +37,6 @@ export const filterSlice = createSlice({
     }
 });
 
-export const { } = filterSlice.actions;
+export const { setFilters } = filterSlice.actions;
 
 export default filterSlice.reducer;
