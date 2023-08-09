@@ -17,7 +17,7 @@ function Filters({ item }) {
           onChange={(e) => console.log('e', e)}
         ></input>}
         <ul className="filterItems">
-          {data?.map(listItem => <FilterItem listItem={listItem}  type={type}  key={listItem}></FilterItem>)}
+          {data?.map(listItem => <FilterItem listItem={listItem} type={type} name={name} key={listItem}></FilterItem>)}
         </ul>
       </div>
     </div>

@@ -13,7 +13,7 @@ const initialState = {
     loading: false,
     brandFilters: [],
     modelFilters: [],
-    selectedFilters: {}
+    selectedFilters: { Brand: [], Model: [] , Sort: []},
 };
 
 export const filterSlice = createSlice({

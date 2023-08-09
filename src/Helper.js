@@ -26,4 +26,22 @@ const filterProducts = (b) => {
     return filteredArray;
 }
 
-export { getFilters, filterProducts };
+const setSelectedFilters = ({ selectedFilters, listItem, name }) => {
+    if (name === 'Sort') {
+        return { ...selectedFilters, [name]: [listItem] }
+    }
+    else if (!selectedFilters?.[name].includes(listItem)) {
+        const newData = [...selectedFilters?.[name], listItem]
+        return {
+            ...selectedFilters, [name]: newData
+        }
+    }
+    else {
+        const newData = selectedFilters?.[name].filter(item => item !== listItem);
+        return {
+            ...selectedFilters, [name]: newData
+        }
+    }
+}
+
+export { getFilters, filterProducts, setSelectedFilters };
