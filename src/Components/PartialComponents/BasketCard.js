@@ -12,13 +12,13 @@ function BasketCard() {
         const datas = changeCount({ basket, product, type })
         dispatch(addItemToBasket(datas))
     }
-
+    const basketProducts = JSON.parse(localStorage.getItem("basket"));
     return (
         <div className="basketCard">
             {
-                basket?.length === 0 && <p>Empty Basket</p>
+                basketProducts?.length === 0 && <p>Empty Basket</p>
             }
-            {basket?.map(product =>
+            {basketProducts?.map(product =>
                 <div className="basketCardInfo" key={product?.name}>
                     <div className="cardText">
                         <p className="name">{product?.name}</p>

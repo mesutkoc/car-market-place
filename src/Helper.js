@@ -61,13 +61,15 @@ const addItemBasket = ({ basket, item, type }) => {
     }
 }
 
-const changeCount = ({ basket, product, type }) => {
+const changeCount = ({ product, type }) => {
+    const basketProducts = JSON.parse(localStorage.getItem("basket"));
+
     if (type === 'decrease') {
         if (product?.count === 1) {
-            return basket?.filter(item => item?.name !== product?.name);
+            return basketProducts?.filter(item => item?.name !== product?.name);
         }
         else {
-            const newBasket = basket?.map(items => {
+            const newBasket = basketProducts?.map(items => {
                 if (items?.name === product?.name) {
                     return { ...items, count: items.count - 1 };
                 }
@@ -77,7 +79,7 @@ const changeCount = ({ basket, product, type }) => {
         }
     }
     else {
-        const newBasket = basket?.map(items => {
+        const newBasket = basketProducts?.map(items => {
             if (items?.name === product?.name) {
                 return { ...items, count: items.count + 1 };
             }
