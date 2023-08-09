@@ -12,7 +12,6 @@ function FilterItem({ listItem, type, name }) {
         }
         const datas = setSelectedFilters({ selectedFilters, listItem, name })
         dispatch(setFilters(datas))
-        console.log({ datas });
     }
 
     return (

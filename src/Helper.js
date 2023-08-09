@@ -62,7 +62,6 @@ const addItemBasket = ({ basket, item, type }) => {
 }
 
 const changeCount = ({ basket, product, type }) => {
-    console.log({ basket, product, type });
     if (type === 'decrease') {
         if (product?.count === 1) {
             return basket?.filter(item => item?.name !== product?.name);

@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import './Components.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartArrowDown } from '@fortawesome/free-solid-svg-icons'
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setSearchTerm } from "../Redux/filterSlice"
 
 function Header() {
-    const { totalPrice } = useSelector((state) => state.basket)
+    const dispatch = useDispatch();
+    const [searhTerm, setSearchterm] = useState();
+    const { totalPrice } = useSelector((state) => state.basket);
+
+    useEffect(() => {
+        dispatch(setSearchTerm(searhTerm))
+    }, [dispatch, searhTerm])
 
     return <div className="header">
         <div className="headerComp">
@@ -17,7 +24,7 @@ function Header() {
                 id="searchBox"
                 className="searchInput"
                 placeholder="Search"
-                onChange={(e) => console.log('e', e)}
+                onChange={(e) => setSearchterm(e.target.value)}
             ></input>
         </div>
 

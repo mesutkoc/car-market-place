@@ -19,7 +19,7 @@ function BasketCard() {
                 basket?.length === 0 && <p>Empty Basket</p>
             }
             {basket?.map(product =>
-                <div className="basketCardInfo">
+                <div className="basketCardInfo" key={product?.name}>
                     <div className="cardText">
                         <p className="name">{product?.name}</p>
                         <p className="price">{product?.price} ₺</p>

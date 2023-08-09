@@ -14,6 +14,7 @@ const initialState = {
     brandFilters: [],
     modelFilters: [],
     selectedFilters: { Brand: [], Model: [], Sort: [] },
+    searchTerm: ''
 };
 
 export const filterSlice = createSlice({
@@ -29,9 +30,12 @@ export const filterSlice = createSlice({
         setBrandFilter: (state, action) => {
             state.brandFilters = getFilters(action.payload, 'brand')
         },
+        setSearchTerm: (state, action) => {
+            state.searchTerm = action.payload
+        }
     }
 });
 
-export const { setFilters, setModelFilter, setBrandFilter } = filterSlice.actions;
+export const { setFilters, setModelFilter, setBrandFilter, setSearchTerm } = filterSlice.actions;
 
 export default filterSlice.reducer;
