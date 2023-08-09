@@ -9,7 +9,6 @@ const getFilters = (productData, filterType) => {
 }
 
 const filterProducts = (b) => {
-    console.log('asd', b);
     const products = JSON.parse(localStorage.getItem("products"));
     const filteredArray = products.filter((obj) => {
         if (b['brand'].length > 0 && b['model'].length > 0) {

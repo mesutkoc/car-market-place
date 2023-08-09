@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import { fetchProducts, setFilteredProducts } from './Redux/productSlice';
 import Dashboard from './Components/Dashboard';
@@ -10,8 +10,7 @@ import Header from './Components/Header';
 
 function App() {
   const dispatch = useDispatch();
-  const [userfilter, setUserFilter] = useState({});
-  const { modelFilters, selectedFilters } = useSelector((state) => state?.filters);
+
   useEffect(() => {
     dispatch(fetchProducts());
     dispatch(fetchFilters());
@@ -19,8 +18,6 @@ function App() {
     dispatch(setFilteredProducts({ brand: ['Tesla', 'BMW'], model: ['Roadster', 'Mustang'] }))
   }, [dispatch]);
 
-  const { products, filteredProducts } = useSelector((state) => state?.products);
-  console.log(filteredProducts);
   return (
     <div className="App">
       <Header />

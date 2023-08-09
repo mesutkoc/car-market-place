@@ -2,4 +2,6 @@ const PROJECT_CONSTANTS = {
     productAPI: 'https://5fc9346b2af77700165ae514.mockapi.io/products',
 }
 
-export default PROJECT_CONSTANTS;
+const SORTING_LIST = ['Old to new', 'New to old', 'Price high to low', 'Price low to high']
+
+export { PROJECT_CONSTANTS, SORTING_LIST };

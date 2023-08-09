@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import PROJECT_CONSTANTS from '../constants';
+import { PROJECT_CONSTANTS } from '../constants';
 import { getFilters } from '../Helper';
 
 

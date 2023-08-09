@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { filterProducts } from '../Helper';
-import PROJECT_CONSTANTS from '../constants';
+import { PROJECT_CONSTANTS } from '../constants';
 
 
 export const fetchProducts = createAsyncThunk('products/fetchProducts', () => {
