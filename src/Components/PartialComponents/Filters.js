@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import './filter.scss';
+import './Filter.scss';
 import FilterItem from "./FilterItem";
 
 function Filters({ item }) {

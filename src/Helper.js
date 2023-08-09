@@ -43,4 +43,50 @@ const setSelectedFilters = ({ selectedFilters, listItem, name }) => {
     }
 }
 
-export { getFilters, filterProducts, setSelectedFilters };
+const addItemBasket = ({ basket, item, type }) => {
+    if (basket?.length === 0) {
+        return [{ ...item, count: 1 }]
+    }
+    else if (basket?.find(product => product?.name === item.name)) {
+        const newBasket = basket?.map(items => {
+            if (items?.name === item?.name) {
+                return { ...items, count: items.count + 1 };
+            }
+            return items;
+        })
+        return newBasket;
+    }
+    else {
+        return [...basket, { ...item, count: 1 }]
+    }
+}
+
+const changeCount = ({ basket, product, type }) => {
+    console.log({ basket, product, type });
+    if (type === 'decrease') {
+        if (product?.count === 1) {
+            return basket?.filter(item => item?.name !== product?.name);
+        }
+        else {
+            const newBasket = basket?.map(items => {
+                if (items?.name === product?.name) {
+                    return { ...items, count: items.count - 1 };
+                }
+                return items;
+            })
+            return newBasket;
+        }
+    }
+    else {
+        const newBasket = basket?.map(items => {
+            if (items?.name === product?.name) {
+                return { ...items, count: items.count + 1 };
+            }
+            return items;
+        })
+        return newBasket;
+    }
+
+}
+
+export { getFilters, filterProducts, setSelectedFilters, addItemBasket, changeCount };

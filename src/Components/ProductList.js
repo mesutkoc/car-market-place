@@ -34,7 +34,7 @@ function ProductList() {
             groupedItems.map((group, index) => (
                 <div key={index} className="group">
                     {group.map((item) => (
-                        <ProductCard item={item} />
+                        <ProductCard item={item} key={item.name} />
                     ))}
                 </div>
             ))
