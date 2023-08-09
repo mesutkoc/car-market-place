@@ -9,26 +9,32 @@
     .headerComp {
         display: flex;
         align-items: center;
-
-        .headerLogo {
-            font-size: 24px;
-            color: #FFFFFF;
-            font-weight: 800;
-
-        }
-
-        .searchInput {
-            width: 408px;
-            height: 36px;
-            font-size: 17px;
-            margin-left: 100px;
-        }
     }
+
+    .headerLogo {
+        font-size: 24px;
+        color: #FFFFFF;
+        font-weight: 800;
+
+    }
+
+    .searchInput {
+        width: 408px;
+        height: 36px;
+        font-size: 17px;
+        margin-left: 100px;
+    }
+
 
     .basket {
         color: #FFFFFF;
         display: flex;
         align-items: center;
+        margin-right: 0;
+
+        p {
+            padding-left: 10px;
+        }
     }
 }
 
@@ -38,6 +44,9 @@
     margin-top: 20px;
 
     .productList {
-        width: 810px;
+        display: inline-grid;
+        grid-template-columns: auto;
+        padding: 0 10px;
+
     }
 }

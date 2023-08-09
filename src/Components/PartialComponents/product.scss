@@ -52,6 +52,8 @@
 
 .basketCard {
     box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.25);
+    overflow-x: hidden;
+    min-width: 400px;
 
     .basketCardInfo {
         display: flex;
@@ -100,4 +102,10 @@
         display: block;
         padding: 50px;
     }
+}
+
+.totalPrice {
+    color: #2A59FE;
+    font-size: 18px;
+    font-weight: bold;
 }

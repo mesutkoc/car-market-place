@@ -16,12 +16,8 @@ function BasketCard() {
     return (
         <div className="basketCard">
             {
-                basket?.length === 0 && <div className="emptyBasket">
-                    Empty Basket
-                    <p>You can add procuct!</p>
-                </div>
+                basket?.length === 0 && <p>Empty Basket</p>
             }
-
             {basket?.map(product =>
                 <div className="basketCardInfo">
                     <div className="cardText">
