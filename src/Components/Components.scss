@@ -35,8 +35,9 @@
 .dashboard {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 
     .productList {
-        background-color: red;
+        width: 810px;
     }
 }
