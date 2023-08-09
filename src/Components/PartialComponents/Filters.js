@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState, useMemo } from "react";
 import './filter.scss';
 import FilterItem from "./FilterItem";
 
 function Filters({ item }) {
+  const [term, setTerm] = useState();
+
   const { name, data, type } = item;
+
+  const userType = (e) => {
+    setTerm(e.target.value);
+  }
+
+  const filterList = useMemo(() => {
+    return term ? data?.filter(type => type?.toLowerCase().includes(term?.toLowerCase())) : data;
+  }, [data, term]);
 
   return (
     <div className="verticalFilterItem">
@@ -14,10 +24,10 @@ function Filters({ item }) {
           id="searchBox"
           className="searchInput"
           placeholder="Search"
-          onChange={(e) => console.log('e', e)}
+          onChange={(e) => userType(e)}
         ></input>}
         <ul className="filterItems">
-          {data?.map(listItem => <FilterItem listItem={listItem} type={type} name={name} key={listItem}></FilterItem>)}
+          {filterList?.map(listItem => <FilterItem listItem={listItem} type={type} name={name} key={listItem}></FilterItem>)}
         </ul>
       </div>
     </div>

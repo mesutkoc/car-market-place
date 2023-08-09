@@ -13,7 +13,7 @@ const initialState = {
     loading: false,
     brandFilters: [],
     modelFilters: [],
-    selectedFilters: { Brand: [], Model: [] , Sort: []},
+    selectedFilters: { Brand: [], Model: [], Sort: [] },
 };
 
 export const filterSlice = createSlice({
@@ -22,21 +22,16 @@ export const filterSlice = createSlice({
     reducers: {
         setFilters: (state, action) => {
             state.selectedFilters = action.payload;
-        }
-    },
-    extraReducers: (builder) => {
-        builder.addCase(fetchFilters.pending, (state) => {
-            state.loading = true;
-        })
-        builder.addCase(fetchFilters.fulfilled, (state, action) => {
-            state.loading = false;
-            state.brandFilters = getFilters(action.payload, 'brand')
+        },
+        setModelFilter: (state, action) => {
             state.modelFilters = getFilters(action.payload, 'model')
-            state.error = '';
-        })
+        },
+        setBrandFilter: (state, action) => {
+            state.brandFilters = getFilters(action.payload, 'brand')
+        },
     }
 });
 
-export const { setFilters } = filterSlice.actions;
+export const { setFilters, setModelFilter, setBrandFilter } = filterSlice.actions;
 
 export default filterSlice.reducer;
