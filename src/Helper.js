@@ -11,18 +11,17 @@ const getFilters = (productData, filterType) => {
 const filterProducts = (b) => {
     const products = JSON.parse(localStorage.getItem("products"));
     const filteredArray = products.filter((obj) => {
-        if (b['brand'].length > 0 && b['model'].length > 0) {
-            return b['brand'].includes(obj.brand) && b['model'].includes(obj.model);
+        if (b['Brand'].length > 0 && b['Model'].length > 0) {
+            return b['Brand'].includes(obj.brand) && b['Model'].includes(obj.model);
         }
-        else if (b['brand'].length > 0) {
-            return b['brand'].includes(obj.brand)
+        else if (b['Brand'].length > 0) {
+            return b['Brand'].includes(obj.brand)
         }
-        else if (b['model'].length > 0) {
-            return b['model'].includes(obj.model)
+        else if (b['Model'].length > 0) {
+            return b['Model'].includes(obj.model)
         }
         return null;
     });
-
     return filteredArray;
 }
 

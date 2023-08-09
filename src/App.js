@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Routes, Route, Navigate } from 'react-router-dom';
-import { fetchProducts, setFilteredProducts } from './Redux/productSlice';
+import { fetchProducts } from './Redux/productSlice';
 import Dashboard from './Components/Dashboard';
 import ProductDetail from './Components/ProductDetail';
 import { fetchFilters } from './Redux/filterSlice';
@@ -14,7 +14,6 @@ function App() {
   useEffect(() => {
     dispatch(fetchProducts());
     dispatch(fetchFilters());
-    dispatch(setFilteredProducts({ brand: ['Tesla', 'BMW'], model: ['Roadster', 'Mustang'] }))
   }, [dispatch]);
 
   return (
