@@ -12,6 +12,13 @@
         flex-direction: column;
         border: 1px solid #2A59FE;
         padding: 5px;
+        cursor: pointer;
+
+        &:hover {
+            .productImage {
+                transform: scale(1.1);
+            }
+        }
 
         .productImage {
             height: 150px;
@@ -27,6 +34,7 @@
 
         .price {
             color: #2A59FE;
+            margin-top: 10px;
         }
 
         .addButton {
@@ -95,6 +103,11 @@
             border: none;
             cursor: pointer;
             font-weight: bold;
+
+            &:hover {
+                opacity: 0.6;
+                transform: scale(1.1);
+            }
         }
     }
 
@@ -108,4 +121,18 @@
     color: #2A59FE;
     font-size: 18px;
     font-weight: bold;
+}
+
+@media screen and (max-width: 1300px) {
+    .dashboard {
+        .productList {
+            .group {
+                display: inline-grid;
+                grid-template-columns: auto auto;
+
+            }
+        }
+    }
+
+
 }

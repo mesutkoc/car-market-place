@@ -15,12 +15,13 @@
         font-size: 24px;
         color: #FFFFFF;
         font-weight: 800;
+        cursor: pointer;
 
     }
 
     .searchInput {
         width: 408px;
-        height: 36px;
+        height: 30px;
         font-size: 17px;
         margin-left: 100px;
     }
@@ -41,12 +42,66 @@
 .dashboard {
     display: inline-grid;
     grid-template-columns: auto auto auto;
-    margin-top: 20px;
 
     .productList {
         display: inline-grid;
         grid-template-columns: auto;
         padding: 0 10px;
+        margin-left: 20px;
+    }
+}
 
+.productDetail {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    .product {
+        img {
+            height: 400px;
+            width: 400px;
+        }
+    }
+
+    .info {
+        padding-left: 20px;
+    }
+
+    .detailInfo {
+        font-size: 24px;
+        margin-bottom: 20px;
+
+        p {
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+
+        .price {
+            color: #2A59FE;
+        }
+    }
+
+    .addButton {
+        background-color: #2A59FE;
+        color: #FFFFFF;
+        font-size: 15px;
+        padding: 6px 150px;
+        border: 1px solid transparent;
+        cursor: pointer;
+        font-weight: bold;
+
+        &:hover {
+            cursor: pointer;
+            color: #2A59FE;
+            background-color: #FFFFFF;
+            border: 1px solid #2A59FE;
+        }
+    }
+
+    .description {
+        margin-top: 20px;
+        height: auto;
+        width: 400px;
     }
 }
