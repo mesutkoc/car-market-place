@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     loading: false,
-    basket: JSON.parse(localStorage.getItem("basket"))
+    basket: JSON.parse(localStorage.getItem("basket")) || []
 };
 
 export const basketSlice = createSlice({
