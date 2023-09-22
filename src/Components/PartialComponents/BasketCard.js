@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { addItemToBasket } from "../../Redux/basketSlice";
 import { changeCount } from "../../Helper";
-import './Product.scss';
+import './product.scss';
 
 function BasketCard() {
     const dispatch = useDispatch();

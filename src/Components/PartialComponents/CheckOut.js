@@ -1,7 +1,7 @@
 import React, { useEffect, useMemo } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setTotalPrice } from "../../Redux/basketSlice";
-import './Product.scss';
+import './product.scss';
 
 function CheckOut() {
     const dispatch = useDispatch();

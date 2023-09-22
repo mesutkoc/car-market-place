@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from 'react-router-dom';
 import { addItemBasket } from "../../Helper";
 import { addItemToBasket } from "../../Redux/basketSlice";
-import './Product.scss';
+import './product.scss';
 
 function ProductCard({ item }) {
     const dispatch = useDispatch();
